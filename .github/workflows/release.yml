@@ -1,0 +1,21 @@
+name: Release Zed Extension
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    name: Release Zed Extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: huacnlee/zed-extension-action@v2
+        with:
+          extension-name: erlang-qol-snippets
+          push-to: ACodingDay/extensions
+        env:
+          # Personal access token with "repo" and "workflow" scopes.
+          # Create it at https://github.com/settings/tokens and add it as a
+          # repository secret named COMMITTER_TOKEN.
+          COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
