@@ -1,0 +1,12 @@
+{
+  "receive": {
+    "prefix": "rec",
+    "body": [
+      "receive",
+      "\t$1 ->",
+      "\t\t$2",
+      "end$3"
+    ],
+    "description": "receive block"
+  }
+}

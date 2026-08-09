@@ -1,0 +1,16 @@
+{
+  "poolboy specs": {
+    "prefix": "pools",
+    "body": [
+      "{ok, Pools} = application:get_env($1, pools),",
+      "PoolSpecs = lists:map(fun({Name, SizeArgs, WorkerArgs}) ->",
+      "\tWorkerImpl = proplists:get_value(worker_impl, WorkerArgs),",
+      "\tPoolArgs = [{name, {local, Name}},",
+      "\t{worker_module, WorkerImpl}] ++ SizeArgs,",
+      "\tpoolboy:child_spec(Name, PoolArgs, WorkerArgs)",
+      "end, Pools),",
+      "$2"
+    ],
+    "description": "poolboy worker specs"
+  }
+}

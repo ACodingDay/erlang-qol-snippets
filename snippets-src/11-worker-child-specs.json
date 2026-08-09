@@ -1,0 +1,16 @@
+{
+  "worker child specs": {
+    "prefix": "works",
+    "body": [
+      "#{",
+      "\tid => $1,",
+      "\tstart => {$2, start_link, [$3]},",
+      "\trestart => permanent,",
+      "\tshutdown => brutal_kill,",
+      "\ttype => worker",
+      "}",
+      "$4"
+    ],
+    "description": "worker child specs"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "supervisor child specs": {
+    "prefix": "sups",
+    "body": [
+      "#{",
+      "\tid => $1,",
+      "\tstart => {$2, start_link, [$3]},",
+      "\trestart => permanent,",
+      "\tshutdown => brutal_kill,",
+      "\ttype => supervisor",
+      "}",
+      "$4"
+    ],
+    "description": "supervisor child specs"
+  }
+}

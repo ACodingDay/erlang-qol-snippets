@@ -1,0 +1,15 @@
+{
+  "Try": {
+    "prefix": "try",
+    "body": [
+      "try $1 of",
+      "\t$2 ->",
+      "\t\t$3",
+      "catch",
+      "\t$4 ->",
+      "\t\t$5",
+      "end$6"
+    ],
+    "description": "try .. catch block"
+  }
+}

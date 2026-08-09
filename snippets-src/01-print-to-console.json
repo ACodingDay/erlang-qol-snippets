@@ -1,0 +1,10 @@
+{
+  "print to console": {
+    "prefix": "log",
+    "body": [
+      "io:format(\"~p~n\", [$1]);",
+      "$2"
+    ],
+    "description": "Log output to console"
+  }
+}

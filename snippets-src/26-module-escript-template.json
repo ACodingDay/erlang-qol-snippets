@@ -1,0 +1,34 @@
+{
+  "module: escript template": {
+    "prefix": "mod-escript",
+    "body": [
+      "#!/opt/homebrew/opt/erlang@24/bin/escript",
+      "%% -*- erlang -*-",
+      "",
+      "%%%=============================================================================",
+      "%%% EScript Functions",
+      "%%%=============================================================================",
+      "",
+      "main(Inputs) ->",
+      "\ttry",
+      "\t\tio:format(\"Inputs: ~p\\n\", [Inputs])",
+      "\tcatch",
+      "\t\tError:Reason ->",
+      "\t\t\tio:format(\"Error: ~p, Reason: ~p\\n\", [Error, Reason]),",
+      "\t\t\tusage()",
+      "\tend;",
+      "main(_) ->",
+      "\tusage().",
+      "",
+      "usage() ->",
+      "\tio:format(\"usage: ${1:module_name} <INPUT>\\n\"),",
+      "\thalt(1).",
+      "",
+      "%%%=============================================================================",
+      "%%% Internal Functions",
+      "%%%=============================================================================",
+      "$0"
+    ],
+    "description": "escript module template"
+  }
+}

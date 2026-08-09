@@ -1,0 +1,8 @@
+id = "erlang-qol-snippets"
+name = "Erlang QoL Snippets"
+version = "0.1.0"
+schema_version = 1
+description = "Erlang QoL: module and comment templates as snippets, ported from the erlang-code-generation VSCode extension"
+repository = "https://github.com/ACodingDay/erlang-qol-snippets"
+authors = ["ACodingDay <yinshuaibi@gmail.com>"]
+snippets = ["./snippets/erlang.json"]

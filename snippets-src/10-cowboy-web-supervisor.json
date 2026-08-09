@@ -1,0 +1,21 @@
+{
+  "cowboy web supervisor": {
+    "prefix": "cows",
+    "body": [
+      "Dispatch = cowboy_router:compile([",
+      "\t{'_', [",
+      "\t\t{\"/endpoint\", endpoint, [{stats_interval, 10000}]}",
+      "\t]}",
+      "]),",
+      "{ok, _} = cowboy:start_clear(",
+      "\thttp,",
+      "\t[",
+      "\t\t{port, $1}",
+      "\t],",
+      "\t#{env=>#{dispatch=>Dispatch}}",
+      "),",
+      "$2"
+    ],
+    "description": "cowboy web supervisor"
+  }
+}

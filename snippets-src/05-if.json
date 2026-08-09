@@ -1,0 +1,14 @@
+{
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if",
+      "\t$1 ->",
+      "\t\t$2",
+      "\ttrue ->",
+      "\t\t$3",
+      "end$4"
+    ],
+    "description": "if block"
+  }
+}

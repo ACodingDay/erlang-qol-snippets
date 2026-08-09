@@ -1,0 +1,9 @@
+{
+  "inline try/catch": {
+    "prefix": "?",
+    "body": [
+      "try $1 catch $2 -> $4 end$5"
+    ],
+    "description": "inline try .. catch block"
+  }
+}
