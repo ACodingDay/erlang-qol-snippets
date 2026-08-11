@@ -6,6 +6,7 @@
       "%%% @doc",
       "%%% Websockets Handler made from template",
       "%%% @author ${2:author}",
+      "%%% @date ${3:YYYY/MM/DD HH-MM-SS}",
       "%%% @end",
       "%%%-----------------------------------------------------------------------------",
       "",
