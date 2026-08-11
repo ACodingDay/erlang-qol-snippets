@@ -142,13 +142,14 @@
     "prefix": "sups",
     "body": [
       "#{",
-      "\tid => $1,",
-      "\tstart => {$2, start_link, [$3]},",
-      "\trestart => permanent,",
-      "\tshutdown => brutal_kill,",
-      "\ttype => supervisor",
+      "\tid => ${1:Mod},",
+      "\tstart => {${1:Mod}, start_link, []},",
+      "\trestart => 'permanent',",
+      "\tshutdown => 'infinity',",
+      "\ttype => 'supervisor',",
+      "\tmodules => [${1:Mod}]",
       "}",
-      "$4"
+      "$0"
     ],
     "description": "supervisor child specs"
   },
