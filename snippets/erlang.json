@@ -127,13 +127,14 @@
     "prefix": "works",
     "body": [
       "#{",
-      "\tid => $1,",
-      "\tstart => {$2, start_link, [$3]},",
-      "\trestart => permanent,",
+      "\tid => ${1:Mod},",
+      "\tstart => {${1:Mod}, start_link, []},",
+      "\trestart => 'permanent',",
       "\tshutdown => brutal_kill,",
-      "\ttype => worker",
+      "\ttype => 'worker',",
+      "\tmodules => [${1:Mod}]",
       "}",
-      "$4"
+      "$0"
     ],
     "description": "worker child specs"
   },
