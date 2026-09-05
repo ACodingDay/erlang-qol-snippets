@@ -1,0 +1,22 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  snippets-in-sync:
+    name: snippets/erlang.json is up to date
+    # windows-latest: ConvertTo-Json formatting and line endings are only
+    # guaranteed to match the committed file on Windows + PowerShell 7.
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate snippets/erlang.json
+        shell: pwsh
+        run: ./build.ps1
+
+      - name: Fail if generated file is out of date
+        run: git diff --exit-code -- snippets/erlang.json
