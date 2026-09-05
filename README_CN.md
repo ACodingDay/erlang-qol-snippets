@@ -49,7 +49,7 @@
 
 ### 方式二：快捷键触发（推荐）
 
-Zed 扩展无法注册命令，因此模块模板通过在你自己的 keymap 中绑定 [`editor::InsertSnippet`](https://zed.dev/docs/keymaps) 动作来触发（Windows 路径为 `%APPDATA%\Zed\keymap.json`）：
+Zed 扩展无法注册命令，因此模块模板通过在你自己的 keymap 中绑定 [`editor::InsertSnippet`](https://zed.dev/docs/keymaps) 动作来触发（macOS 与 Linux 路径为 `~/.config/zed/keymap.json`，Windows 路径为 `%APPDATA%\Zed\keymap.json`）：
 
 ```json
 [
@@ -75,7 +75,7 @@ Zed 扩展无法注册命令，因此模块模板通过在你自己的 keymap �
 ]
 ```
 
-按 `ctrl-shift-p` 后再按对应字母即可插入模板。注意：组合键等待期间，单独按 `ctrl-shift-p` 打开命令面板会有约 1 秒延迟。`$1`/`$2`/`$3` tabstop 会依次引导你填写模块名、作者和字段。
+按 `ctrl-shift-p` 后再按对应字母即可插入模板。注意：组合键等待期间，单独按 `ctrl-shift-p` 打开命令面板会有约 1 秒延迟。`$1`–`$4` tabstop 会依次引导你填写模块名、作者、日期以及模板相关字段（如 record 字段或导出列表）。
 
 ## 编辑模板 / 新增片段
 
@@ -93,7 +93,7 @@ Zed 要求同一语言的所有 snippet 必须位于单个文件中（`snippets/
    }
    ```
 
-2. 运行合并脚本（PowerShell，无依赖）：
+2. 运行合并脚本（需 PowerShell 7 `pwsh`，无其他依赖）：
 
    ```powershell
    .\build.ps1
@@ -107,7 +107,7 @@ Zed 要求同一语言的所有 snippet 必须位于单个文件中（`snippets/
 - tabstop 必须连续编号（`$1`、`$2` …… 最后用 `$0`）；相同编号的占位符是联动的（输入一次，所有位置同步填充）。
 - Zed 不支持 snippet 变量（如 `$TM_FILENAME_BASE`），请改用联动 tabstop。
 - body 中若含字面量 `$`，需转义为 `\\$`。
-- 不要直接修改 `snippets/erlang.json` —— 它由 `build.ps1` 生成。
+- 不要直接修改 `snippets/erlang.json` —— 它由 `build.ps1` 生成。脚本要求 PowerShell 7（`pwsh`）：Windows PowerShell 5.1 的 `ConvertTo-Json` 输出格式不同，会导致整个生成文件被重排。构建脚本同时会校验两份 README 的前缀表和快捷键片段名与 snippets 保持一致，CI 也会重新生成全部文件，若不同步则构建失败。
 
 ## 贡献人员
 
