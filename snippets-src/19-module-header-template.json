@@ -19,9 +19,9 @@
       "",
       "%% example record",
       "-record(example_record, {",
-			"\t${4:fields}",
+      "\t${4:fields}",
       "}).",
-      "-type example_record() :: example_record.",
+      "-type example_record() :: #example_record{}.",
       "",
       "-endif.",
       "$0"

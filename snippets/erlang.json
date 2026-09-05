@@ -68,7 +68,7 @@
   "inline try/catch": {
     "prefix": "?",
     "body": [
-      "try $1 catch $2 -> $4 end$5"
+      "try $1 catch $2 -> $3 end$4"
     ],
     "description": "inline try .. catch block"
   },
@@ -227,7 +227,7 @@
       "-record(loop_state, {",
       "\t${4:fields}",
       "}).",
-      "-type loop_state() :: loop_state.",
+      "-type loop_state() :: #loop_state{}.",
       "",
       "%%%=============================================================================",
       "%%% API",
@@ -330,13 +330,13 @@
       "",
       "-spec start_link() -> {ok, pid()} | {error, {already_started, pid()}} | {error, Reason::any()}.",
       "start_link() ->",
-      "\tgen_statem:start({local, ?SERVER}, ?MODULE, [], []).",
+      "\tgen_statem:start_link({local, ?SERVER}, ?MODULE, [], []).",
       "",
-      "-spec stop() -> ok;",
+      "-spec stop() -> ok.",
       "stop() ->",
       "\tgen_statem:stop(?SERVER).",
       "",
-      "-spec example_action() -> term();",
+      "-spec example_action() -> term().",
       "example_action() ->",
       "\tgen_statem:call(?SERVER, example_action).",
       "",
@@ -495,7 +495,7 @@
       "-record(example_record, {",
       "\t${4:fields}",
       "}).",
-      "-type example_record() :: example_record.",
+      "-type example_record() :: #example_record{}.",
       "",
       "-endif.",
       "$0"
@@ -657,7 +657,7 @@
       "-record(loop_state, {",
       "\t${4:fields}",
       "}).",
-      "-type loop_state() :: loop_state.",
+      "-type loop_state() :: #loop_state{}.",
       "",
       "%%%=============================================================================",
       "%%% API",
@@ -744,7 +744,7 @@
       "-record(loop_state, {",
       "\tping_interval :: integer()",
       "}).",
-      "-type loop_state() :: loop_state.",
+      "-type loop_state() :: #loop_state{}.",
       "",
       "%%%=============================================================================",
       "%%% Websocket Handler Callbacks",
@@ -937,7 +937,7 @@
       "-record(state, {",
       "\tlevel :: {'mask', integer()}",
       "}).",
-      "-type state() :: state.",
+      "-type state() :: #state{}.",
       "",
       "%%%=============================================================================",
       "%%% Lager Handler Callbacks",
@@ -1003,7 +1003,7 @@
   "module: escript template": {
     "prefix": "mod-escript",
     "body": [
-      "#!/opt/homebrew/opt/erlang@24/bin/escript",
+      "#!/usr/bin/env escript",
       "%% -*- erlang -*-",
       "",
       "%%%=============================================================================",

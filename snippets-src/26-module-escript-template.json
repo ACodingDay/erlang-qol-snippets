@@ -2,7 +2,7 @@
   "module: escript template": {
     "prefix": "mod-escript",
     "body": [
-      "#!/opt/homebrew/opt/erlang@24/bin/escript",
+      "#!/usr/bin/env escript",
       "%% -*- erlang -*-",
       "",
       "%%%=============================================================================",

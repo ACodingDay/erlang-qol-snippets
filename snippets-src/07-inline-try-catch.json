@@ -2,7 +2,7 @@
   "inline try/catch": {
     "prefix": "?",
     "body": [
-      "try $1 catch $2 -> $4 end$5"
+      "try $1 catch $2 -> $3 end$4"
     ],
     "description": "inline try .. catch block"
   }

@@ -32,7 +32,7 @@
       "-record(loop_state, {",
       "\tping_interval :: integer()",
       "}).",
-      "-type loop_state() :: loop_state.",
+      "-type loop_state() :: #loop_state{}.",
       "",
       "%%%=============================================================================",
       "%%% Websocket Handler Callbacks",

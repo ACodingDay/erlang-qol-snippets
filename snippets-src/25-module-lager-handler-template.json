@@ -34,7 +34,7 @@
       "-record(state, {",
       "\tlevel :: {'mask', integer()}",
       "}).",
-      "-type state() :: state.",
+      "-type state() :: #state{}.",
       "",
       "%%%=============================================================================",
       "%%% Lager Handler Callbacks",
