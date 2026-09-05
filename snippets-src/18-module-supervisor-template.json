@@ -44,7 +44,7 @@
       "\tSupFlags = #{strategy => one_for_all,",
       "\t             intensity => 0,",
       "\t             period => 1},",
-			"\tChildSpecs = ${4:[]},",
+      "\tChildSpecs = ${4:[]},",
       "\t{ok, {SupFlags, ChildSpecs}}.",
       "",
       "%%%=============================================================================",

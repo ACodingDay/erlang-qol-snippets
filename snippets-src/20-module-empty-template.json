@@ -19,7 +19,7 @@
       "",
       "%% External API",
       "-export([",
-			"\t${4:exports}",
+      "\t${4:exports}",
       "]).",
       "",
       "-define(SERVER, ?MODULE).",
